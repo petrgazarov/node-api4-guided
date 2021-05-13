@@ -7,7 +7,7 @@ const router = express.Router();
 router.use(express.json());
 
 router.get("/", (req, res) => {
-  const messageOfTheDay = process.env.MOTD || 'Welcome to my API server!';
+  const messageOfTheDay = process.env.MOTD || 'Welcome to my API server! v2';
 
   res.status(200).json({ messageOfTheDay, api: "up" });
 });
