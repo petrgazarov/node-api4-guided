@@ -7,6 +7,10 @@ const router = express.Router();
 router.use(express.json());
 
 router.get("/", (req, res) => {
+  // This "message of the day" variable was created to demonstrate creating
+  // environment variables in the Heroku platform. You can define environment
+  // variables that Heroku will create in the OS environment it makes for your
+  // app by clicking on the "Settings" tab for your app in Heroku.
   const messageOfTheDay = process.env.MOTD || 'Welcome to my API server!';
 
   res.status(200).json({ messageOfTheDay, api: "up" });
