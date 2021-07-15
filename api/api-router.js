@@ -47,7 +47,7 @@ router.delete("/shouts/:id", (req, res) => {
 router.use(errorHandler);
 
 function errorHandler(error, req, res, next) {
-  // do something with error before responding
+  // Do something with error before responding
   // like saving it to a database, sending a mail to the admin
   // or using an external logging service
   res.status(500).json(error.message);
