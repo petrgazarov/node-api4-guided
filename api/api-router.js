@@ -7,9 +7,13 @@ const router = express.Router();
 router.use(express.json());
 
 router.get("/", (req, res) => {
-  const messageOfTheDay = process.env.MOTD || 'Hello World!';
+  // This "message of the day" variable was created to demonstrate creating
+  // environment variables in the Heroku platform. You can define environment
+  // variables that Heroku will create in the OS environment it makes for your
+  // app by clicking on the "Settings" tab for your app in Heroku.
+  const messageOfTheDay = process.env.MOTD || 'Welcome to my API server!';
 
-  res.status(200).json({ api: "up", messageOfTheDay });
+  res.status(200).json({ messageOfTheDay, api: "up" });
 });
 
 router.get("/shouts", (req, res, next) => {
@@ -43,7 +47,7 @@ router.delete("/shouts/:id", (req, res) => {
 router.use(errorHandler);
 
 function errorHandler(error, req, res, next) {
-  // do something with error before responding
+  // Do something with error before responding
   // like saving it to a database, sending a mail to the admin
   // or using an external logging service
   res.status(500).json(error.message);
