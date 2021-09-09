@@ -4,7 +4,8 @@
     "description": "Guided project for **Node API** module 4.",
     "main": "index.js",
     "scripts": {
-        "server": "nodemon index.js"
+        "start": "node index.js",
+        "server": "cross-env nodemon index.js"
     },
     "repository": {
         "type": "git",
@@ -17,6 +18,8 @@
     },
     "homepage": "https://github.com/LambdaSchool/node-api4-guided#readme",
     "dependencies": {
+        "cross-env": "^7.0.3",
+        "dotenv": "^10.0.0",
         "express": "^4.17.1",
         "helmet": "^4.6.0",
         "knex": "^0.95.6",
